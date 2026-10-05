@@ -1,0 +1,99 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-blush: var(--blush);
+  --color-blush-foreground: var(--blush-foreground);
+  --color-rose: var(--rose);
+  --color-sage: var(--sage);
+  --color-sage-foreground: var(--sage-foreground);
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: #fcf8f6;
+  --foreground: #292d2b;
+
+  --card: #ffffff;
+  --card-foreground: #292d2b;
+
+  --popover: #ffffff;
+  --popover-foreground: #292d2b;
+
+  --primary: #bd4e68;
+  --primary-foreground: #ffffff;
+
+  --secondary: #e8efea;
+  --secondary-foreground: #344b3d;
+
+  --muted: #f4efed;
+  --muted-foreground: #6b716d;
+
+  --accent: #e8efea;
+  --accent-foreground: #344b3d;
+
+  --blush: #f3e2e4;
+  --blush-foreground: #602c3a;
+
+  --rose: #c75f78;
+  --sage: #718b7b;
+  --sage-foreground: #ffffff;
+
+  --destructive: #b43d45;
+  --destructive-foreground: #ffffff;
+
+  --border: #e9e2e0;
+  --input: #e9e2e0;
+  --ring: #718b7b;
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body { height: 100%; }
+  body {
+    background-color: var(--muted);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: 0; }
+}
+
+@utility phone-shell {
+  max-width: 28rem;
+  margin-inline: auto;
+  min-height: 100vh;
+  background: var(--background);
+  position: relative;
+}
+
